@@ -1,0 +1,22 @@
+#
+# Questions
+#
+questions:
+  KUNDEN_KUERZEL: 'Kundenkürzel'
+  PROJEKT_NAME: 'Projektname'
+#
+# Tasks
+#
+tasks:
+  -
+    type: command
+    info: 'Run "ls -lash" cmd'
+    cmd: ls -lash
+  -
+    type: replace_placeholder
+    info: 'Docker .env Konfiguration aktualisiert'
+    file: '.env'
+  -
+    type: replace_placeholder
+    info: 'Gruntfile.js aktualisiert'
+    file: './htdocs/Gruntfile.js'

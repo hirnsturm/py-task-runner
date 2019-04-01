@@ -1,0 +1,59 @@
+= Task Runner
+
+This script runs custom tasks.
+
+== Requirements
+
+* https://www.python.org/[Python 3]
+* http://jinja.pocoo.org/docs/2.10/intro/#installation[Jinja2]
++
+[source,bash]
+----
+$ pip3 install Jinja2
+----
+
+* https://pyyaml.org/[PyYAML]
++
+[source,bash]
+----
+$ pip3 install PyYAML
+----
+
+== Installation
+
+1. Download current version
++
+[source,bash]
+----
+// download with wget
+$ wget https://github.com/hirnsturm/py-task-runner/archive/master.zip -O py-task-runner.zip
+// download with curl
+$ curl https://github.com/hirnsturm/py-task-runner/archive/master.zip -o py-task-runner.zip
+----
+2. Unzip package
++
+[source,bash]
+----
+$ unzip py-task-runner.zip
+----
+3. Create configuration file
++
+[source,bash]
+----
+$ cd py-task-runner
+py-task-runner$ mv taskrunner.yml.dist taskrunner.yml
+----
+
+== Configuration
+
+You can configure your tasks and questions in `taskrunner.yml` file.
+
+== Execution
+
+* Install script on target system
+* Run programm
++
+[source,bash]
+----
+$ python3 taskrunner.py
+----
