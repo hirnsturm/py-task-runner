@@ -1,6 +1,6 @@
 = Task Runner
 
-This script runs custom tasks.
+This script runs custom tasks and commands.
 
 == Requirements
 
@@ -25,9 +25,10 @@ $ pip3 install PyYAML
 +
 [source,bash]
 ----
-// download with wget
+// Download with wget
 $ wget https://github.com/hirnsturm/py-task-runner/archive/master.zip -O py-task-runner.zip
-// download with curl
+
+// Download with cURL
 $ curl https://github.com/hirnsturm/py-task-runner/archive/master.zip -o py-task-runner.zip
 ----
 2. Unzip package
@@ -36,23 +37,44 @@ $ curl https://github.com/hirnsturm/py-task-runner/archive/master.zip -o py-task
 ----
 $ unzip py-task-runner.zip
 ----
-3. Create configuration file
+3. Create configuration file and configure your tasks and questions
 +
 [source,bash]
 ----
 $ cd py-task-runner
 py-task-runner$ mv taskrunner.yml.dist taskrunner.yml
 ----
+4. Define your tasks or commands in `taskrunner.yml`
 
 == Configuration
 
-You can configure your tasks and questions in `taskrunner.yml` file.
+You can configure your tasks and questions in `taskrunner.yml`.
+
+=== Example
+
+[source,bash]
+----
+#
+# Questions
+#
+questions:
+  NAME: 'What´s your name?'
+#
+# Tasks
+#
+tasks:
+  -
+    type: command
+    info: 'Run "pwd" command'
+    cmd: pwd
+  -
+    type: replace_placeholder
+    info: 'Replace {{NAME}} in ./examples/name.txt'
+    file: './examples/name.txt'
+----
 
 == Execution
 
-* Install script on target system
-* Run programm
-+
 [source,bash]
 ----
 $ python3 taskrunner.py

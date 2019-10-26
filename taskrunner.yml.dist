@@ -2,21 +2,16 @@
 # Questions
 #
 questions:
-  KUNDEN_KUERZEL: 'Kundenkürzel'
-  PROJEKT_NAME: 'Projektname'
+  NAME: 'What´s your name?'
 #
 # Tasks
 #
 tasks:
   -
     type: command
-    info: 'Run "ls -lash" cmd'
-    cmd: ls -lash
+    info: 'Run "pwd" command'
+    cmd: pwd
   -
     type: replace_placeholder
-    info: 'Docker .env Konfiguration aktualisiert'
-    file: '.env'
-  -
-    type: replace_placeholder
-    info: 'Gruntfile.js aktualisiert'
-    file: './htdocs/Gruntfile.js'
+    info: 'Replace {{NAME}} in ./examples/replace_name.txt'
+    file: './examples/replace_name.txt'
